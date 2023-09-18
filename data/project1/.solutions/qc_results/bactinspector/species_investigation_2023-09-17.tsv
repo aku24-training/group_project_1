@@ -1,0 +1,7 @@
+file	species	%_of_10_best_matches=species	top_hit_distance	top_hit_p_value	top_hit_shared_hashes	num_genomes	maximum_genome_length	minimum_genome_length	result
+Stm4_1	No significant matches								uncertain
+Stm6_1	No significant matches								uncertain
+Stm25_1	Staphylococcus aureus	100.0	0.000312573	0.0	987/1000	395.0	3114278.0	2664662.0	good
+Stm2_1  Salmonella enterica subsp. enterica serovar Typhimurium 90      0.00108342      0.0     956/1000        57      5352626 4769471 good
+Stm22_1 Salmonella enterica subsp. enterica serovar Typhimurium 60      0.00282712      0.0     891/1000        57      5352626 4769471 good
+Stm5_1  Salmonella enterica subsp. enterica serovar Typhimurium 90      0.000705841     0.0     971/1000        57      5352626 4769471 good

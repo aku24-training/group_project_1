@@ -1,0 +1,205 @@
+IQ-TREE 2.2.0-beta COVID-edition built Mar  3 2022
+
+Input file name: ../pseudogenomes/pseudogenomes.snps.fas
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 243315
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 22 sequences with 4772642 nucleotide sites
+Number of constant sites: 4.77001e+06 (= 99.9449% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 4.77001e+06 (= 99.9449% of all sites)
+Number of parsimony informative sites: 2152
+Number of distinct site patterns: 641
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: GTR+F+G4
+
+Rate parameter R:
+
+  A-C: 1.1676
+  A-G: 3.4659
+  A-T: 0.6353
+  C-G: 0.3696
+  C-T: 3.2174
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.239
+  pi(C) = 0.2612
+  pi(G) = 0.2606
+  pi(T) = 0.2392
+
+Rate matrix Q:
+
+  A    -1.108    0.2485     0.736    0.1238
+  C    0.2274   -0.9331   0.07849    0.6272
+  G    0.6749   0.07867   -0.9486    0.1949
+  T    0.1237    0.6849    0.2123    -1.021
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.02006
+
+ Category  Relative_rate  Proportion
+  1         5.354e-31      0.25
+  2         1.095e-15      0.25
+  3         9.894e-07      0.25
+  4         4              0.25
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -6640087.4906 (s.e. 519.1017)
+Unconstrained log-likelihood (without tree): -6644377.6056
+Number of free parameters (#branches + #model parameters): 50
+Akaike information criterion (AIC) score: 13280274.9812
+Corrected Akaike information criterion (AICc) score: 13280274.9822
+Bayesian information criterion (BIC) score: 13280943.9017
+
+Total tree length (sum of branch lengths): 0.0006
+Sum of internal branch lengths: 0.0005 (88.0168% of tree length)
+
+WARNING: 3 near-zero internal branches (<0.0000) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Stm10' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++--Stm10
+|
+|           +--Stm11
+|        +--| (89)
+|        |  +--Stm18
+|     +**| (52)
+|     |  |                                                                     +--Stm13
+|     |  |                                                                  +--| (100)
+|     |  |                                                                  |  +--Stm2
+|     |  |                                                               +--| (98)
+|     |  |                                                               |  |     +--Stm14
+|     |  |                                                               |  |  +--| (100)
+|     |  |                                                               |  |  |  +--Stm3
+|     |  |                                                               |  +--| (100)
+|     |  |                                                               |     +--Stm16
+|     |  |                                                            +--| (100)
+|     |  |                                                            |  |  +--Stm15
+|     |  |                                                            |  +--| (100)
+|     |  |                                                            |     |  +--Stm1
+|     |  |                                                            |     +--| (100)
+|     |  |                                                            |        |  +**Stm5
+|     |  |                                                            |        +--| (100)
+|     |  |                                                            |           +--Stm7
+|     |  |            +-----------------------------------------------| (100)
+|     |  |            |                                               +--Stm17
+|     |  |  +---------| (100)
+|     |  |  |         |               +--Stm19
+|     |  |  |         |            +--| (100)
+|     |  |  |         |            |  +--Stm9
+|     |  |  |         |         +--| (89)
+|     |  |  |         |         |  +--Stm22
+|     |  |  |         |      +--| (67)
+|     |  |  |         |      |  +--Stm24
+|     |  |  |         +------| (100)
+|     |  |  |                +--Stm23
+|     |  +**| (73)
+|     |     +--Stm21
+|  +**| (71)
+|  |  +--Stm12
++--| (93)
+|  +--Stm20
+|
++--Stm8
+
+Tree in newick format:
+
+(Stm10:0.0000012535,((((Stm11:0.0000039827,Stm18:0.0000018822)89:0.0000004070,((((((Stm13:0.0000029358,Stm2:0.0000041893)100:0.0000020936,((Stm14:0.0000014851,Stm3:0.0000028609)100:0.0000023464,Stm16:0.0000052444)100:0.0000033756)98:0.0000008917,(Stm15:0.0000031430,(Stm1:0.0000012495,(Stm5:0.0000000444,Stm7:0.0000004284)100:0.0000014590)100:0.0000027326)100:0.0000020919)100:0.0000019640,Stm17:0.0000060281)100:0.0003406721,((((Stm19:0.0000025327,Stm9:0.0000033547)100:0.0000025443,Stm22:0.0000074934)89:0.0000004337,Stm24:0.0000046614)67:0.0000002469,Stm23:0.0000073375)100:0.0000528006)100:0.0000710527,Stm21:0.0000012729)73:0.0000000472)52:0.0000000210,Stm12:0.0000019075)71:0.0000000456,Stm20:0.0000016032)93:0.0000007611,Stm8:0.0000012749);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -6640087.591909021
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.000000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++**Stm10
+|
+|           +--Stm11
+|        +**| (89)
+|        |  +**Stm18
+|     +**| (52)
+|     |  |                                                                     +--Stm13
+|     |  |                                                                  +--| (100)
+|     |  |                                                                  |  +--Stm2
+|     |  |                                                               +**| (98)
+|     |  |                                                               |  |     +**Stm14
+|     |  |                                                               |  |  +--| (100)
+|     |  |                                                               |  |  |  +--Stm3
+|     |  |                                                               |  +--| (100)
+|     |  |                                                               |     +--Stm16
+|     |  |                                                            +**| (100)
+|     |  |                                                            |  |  +--Stm15
+|     |  |                                                            |  +--| (100)
+|     |  |                                                            |     |  +**Stm1
+|     |  |                                                            |     +--| (100)
+|     |  |                                                            |        |  +**Stm5
+|     |  |                                                            |        +**| (100)
+|     |  |                                                            |           +**Stm7
+|     |  |            +-----------------------------------------------| (100)
+|     |  |            |                                               +--Stm17
+|     |  |  +---------| (100)
+|     |  |  |         |               +--Stm19
+|     |  |  |         |            +--| (100)
+|     |  |  |         |            |  +--Stm9
+|     |  |  |         |         +**| (89)
+|     |  |  |         |         |  +--Stm22
+|     |  |  |         |      +**| (67)
+|     |  |  |         |      |  +--Stm24
+|     |  |  |         +------| (100)
+|     |  |  |                +--Stm23
+|     |  +**| (73)
+|     |     +**Stm21
+|  +**| (71)
+|  |  +**Stm12
++**| (93)
+|  +**Stm20
+|
++**Stm8
+
+
+Consensus tree in newick format: 
+
+(Stm10:0.0000012591,((((Stm11:0.0000039816,Stm18:0.0000018859)89:0.0000004191,((((((Stm13:0.0000029251,Stm2:0.0000041911)100:0.0000020793,((Stm14:0.0000014692,Stm3:0.0000028454)100:0.0000023468,Stm16:0.0000052391)100:0.0000033780)98:0.0000009025,(Stm15:0.0000031357,(Stm1:0.0000012518,(Stm5:0.0000000445,Stm7:0.0000004191)100:0.0000014419)100:0.0000027316)100:0.0000021000)100:0.0000019617,Stm17:0.0000060378)100:0.0003406794,((((Stm19:0.0000025358,Stm9:0.0000033528)100:0.0000025490,Stm22:0.0000074963)89:0.0000004367,Stm24:0.0000046678)67:0.0000002241,Stm23:0.0000073447)100:0.0000528007)100:0.0000710351,Stm21:0.0000012496)73:0.0000000528)52:0.0000000510,Stm12:0.0000018888)71:0.0000000502,Stm20:0.0000016221)93:0.0000007398,Stm8:0.0000012630);
+
+TIME STAMP
+----------
+
+Date and time: Sun Sep 17 21:53:39 2023
+Total CPU time used: 16.172718 seconds (0h:0m:16s)
+Total wall-clock time used: 16.35269239 seconds (0h:0m:16s)
+

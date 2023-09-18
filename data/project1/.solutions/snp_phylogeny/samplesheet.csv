@@ -1,0 +1,7 @@
+sample,fastq_1,fastq_2
+Stm2,/data/users/jk834/final_project/fastq/Stm2_1.fastq.gz,/data/users/jk834/final_project/fastq/Stm2_2.fastq.gz
+Stm22,/data/users/jk834/final_project/fastq/Stm22_1.fastq.gz,/data/users/jk834/final_project/fastq/Stm22_2.fastq.gz
+Stm25,/data/users/jk834/final_project/fastq/Stm25_1.fastq.gz,/data/users/jk834/final_project/fastq/Stm25_2.fastq.gz
+Stm5,/data/users/jk834/final_project/fastq/Stm5_1.fastq.gz,/data/users/jk834/final_project/fastq/Stm5_2.fastq.gz
+Stm4,/data/users/jk834/final_project/fastq/Stm4_1.fastq.gz,/data/users/jk834/final_project/fastq/Stm4_2.fastq.gz
+Stm6,/data/users/jk834/final_project/fastq/Stm6_1.fastq.gz,/data/users/jk834/final_project/fastq/Stm6_2.fastq.gz

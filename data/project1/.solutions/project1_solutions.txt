@@ -1,0 +1,112 @@
+------QC------------
+//activate qc environment
+conda activate qc
+
+//make a directory for qc results
+mkdir qc_results
+cd qc_results
+
+//run fastqc
+mkdir fastqc
+fastqc -o fastqc ../fastq/*.fastq.gz
+
+//Merge fastqc results directory
+cp ../results_19samples/fastq/* fastqc/
+
+//Run multiqc
+multiqc fastq
+
+//conclusion Stm4 and Stm6 are low coverage and should be excluded from further analysis
+
+//run bactinspector (enough to run on _1.fastq files)
+mkdir bactinspector_results
+bactinspector check_species -i ../fastq/ -fq *_1.fastq.gz -o bactinspector_results
+
+//conclusion, Stm25 is a Staph and should be removed from further analysis
+
+------SNP Phylogeny--------
+//activate pipelines environment
+conda activate nextflow-pipelines
+
+//make a directory for snp-phylogeny
+mkdir snp_phylogeny
+cd snp_phylogeny
+
+//prepare samplesheet (add prefix)
+echo "sample,fastq_1,fastq_2" > samplesheet.csv
+for s in `ls ../fastq/*1.f*.gz | sed 's/..\/fastq\///' | sed 's/\_1.fastq.gz//'`
+do
+  echo $s",/data/users/jk834/final_project/fastq/"${s}_1.fastq.gz",/data/users/jk834/final_project/fastq/"${s}_2.fastq.gz >> samplesheet.csv
+done
+
+//run bactmap (change location of main.nf to where it is installed)
+mkdir bactmap
+nextflow run /home/software/nf-pipelines/nf-core-bactmap-1.0.0/workflow/main.nf
+--input ./samplesheet.csv
+--outdir ./bactmap
+--reference ../ref/sequence.fasta
+-w ./bactmap/work
+-profile singularity
+-with-tower
+-resume
+
+//activate snp-phylogeny environment
+conda activate snp-phylogeny
+
+mkdir pseudogenomes
+cd pseudogenomes
+
+//copy generated pseudogenomes and pre-generated into one directory
+cp ../bactmap/pseudogenomes/*.fas .
+cp ../../results_19samples/pseudogenomes .
+
+cat *.fas > aligned_pseudogenomes.fas
+snp-sites aligned_pseudogenomes.fas > pseudogenomes.snps.fas
+snp-sites -C aligned_pseudogenomes.fas
+
+//change fconst accordingly
+iqtree \
+    -fconst 584890,622728,642011,587272 \
+    -B 1000 -m GTR+G
+    -s pseudogenomes.snps.fas \
+    -ntmax 2 
+    -mem 2GB 
+  
+//midpoint root tree (use script or figtree)
+
+------ARIBA----------------
+
+//activate ariba software
+conda activate ariba-2.14.6
+
+//make a directory for the results
+mkdir ariba_results
+cd ariba_results
+
+//prepeare the database
+ariba getref card out.card
+ariba prepareref -f out.card.fa -m out.card.tsv ariba_card_db
+
+//construct a for loop for extracting sample names and test
+for s in `ls ../fastq/*1.f*.gz | sed 's/..\/fastq\///' | sed 's/\_1.fastq.gz//'`
+do
+  echo $s
+done
+
+//construct a for loop and run ariba on all the samples
+for s in `ls ../fastq/*1.f*.gz | sed 's/..\/fastq\///' | sed 's/\_1.fastq.gz//'`
+do
+    ariba run --threads 2 ariba_card_db ../fastq/${s}_1.fastq.gz ../fastq/${s}_2.fastq.gz ariba.${s}
+done
+
+//At this point they need to copy the pregenerated and their generated results into one directory and run ariba summary
+cp ../results_19samples/ariba_results/* .
+
+//Run ariba summary to collate the results
+ariba summary all_results ariba.*/report.tsv
+
+//Run a sed to rename the sample identifiers 
+sed...
+
+//Add to the data 19_samples_ariba_results directory
+cp ../results_19samples/ariba_results/* .
